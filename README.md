@@ -78,3 +78,14 @@ thread_3.start()
    ```
 
 4. The phone numbers will be saved in the `phones.csv` file.
+
+## Requirements
+
+- **Python 3.x**
+- **Libraries:** requests e BeautifulSoup4
+
+You can install the required libraries using:
+
+```bash
+pip install requests beautifulsoup4
+```
