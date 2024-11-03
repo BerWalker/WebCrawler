@@ -1,27 +1,30 @@
 # WebCrawler
 
-This WebCrawler was developed as a bonus module for the Solyd course. It is designed to extract links and phone numbers from car advertisements on the [Django Anúncios](https://django-anuncios.solyd.com.br) website. The application uses the `BeautifulSoup` library to parse HTML and `threading` to optimize the process by fetching multiple ads simultaneously.
+This WebCrawler is a bonus module developed for the Solyd course. It’s designed to extract links and phone numbers from advertisements on various websites, allowing flexible configurations for different domains. The application uses BeautifulSoup for HTML parsing, requests for HTTP requests, and threading for concurrent processing to speed up data extraction.
 
 ## Features
 
-- Collects car advertisement links.
-- Extracts phone numbers from the ads.
-- Saves phone numbers to a `CSV` file.
-- Utilizes multiple threads to speed up the scraping process.
+- **Flexible URL Configuration**: User can input any domain and target URL, making the crawler adaptable to multiple sites.
+- **Dynamic Link and Phone Extraction**: Configurable CSS selectors to locate advertisement links and phone numbers.
+- **Multi-threading for Efficiency**: Uses threading to fetch data from multiple ads simultaneously, improving performance.
+- **CSV Export**: Extracted phone numbers are saved in a phones.csv file in a standard format.
 
 ## How It Works
 
-1. **Link Collection**: 
-   The crawler fetches advertisement links from the main car listings page and stores them in a list.
+1. **Input Configuration**: 
+The user is prompted to input the base domain, target URL, and optional CSS selectors for locating ad links and phone numbers.
    
-2. **Phone Extraction**: 
-   For each ad found, it parses the HTML to extract phone numbers using regular expressions.
+2. **Link Collection**: 
+The crawler retrieves advertisement links from the provided URL based on the specified CSS selector, storing these links in a list.
    
-3. **Saving Data**: 
-   All found phone numbers are saved into a `phones.csv` file in the format: `Area Code + Phone Number`.
+3. **Phone Extraction**: 
+For each ad, the crawler parses the HTML and extracts phone numbers using a regular expression pattern. The extraction process is flexible, allowing users to adjust the pattern if needed.
 
-4. **Threads**: 
-   Using `threading`, the crawler is able to make multiple requests in parallel, improving the performance of the scraping process.
+5. **Saving Data**: 
+   All extracted phone numbers are saved to a phones.csv file in the format: Area Code + Phone Number.
+
+6. **Concurrent Requests**
+   Using threading, the crawler can handle multiple requests at once, increasing data retrieval speed.
 
 ## Files
 
